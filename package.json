@@ -1,10 +1,13 @@
 {
-  "name": "omit-deep",
+  "name": "omit-deep-2",
   "description": "Recursively omit the specified key or keys from an object.",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/omit-deep",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "repository": "jonschlinkert/omit-deep",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bsovs/omit-deep.git"
+  },
   "bugs": {
     "url": "https://github.com/jonschlinkert/omit-deep/issues"
   },
