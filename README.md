@@ -1,25 +1,27 @@
-# omit-deep [![NPM version](https://img.shields.io/npm/v/omit-deep.svg?style=flat)](https://www.npmjs.com/package/omit-deep) [![NPM monthly downloads](https://img.shields.io/npm/dm/omit-deep.svg?style=flat)](https://npmjs.org/package/omit-deep)  [![NPM total downloads](https://img.shields.io/npm/dt/omit-deep.svg?style=flat)](https://npmjs.org/package/omit-deep) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/omit-deep.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/omit-deep)
+# omit-deep-remove 
 
 > Recursively omit the specified key or keys from an object.
+>
+> Extension of popular project [omit-deep](https://github.com/jonschlinkert/omit-deep)
 
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
 
 ```sh
-$ npm install --save omit-deep
+$ npm install --save omit-deep-remove
 ```
 
 ## Usage
 
 ```js
-var omitDeep = require('omit-deep');
+const omitDeep = require('omit-deep-remove');
 
-var obj = {a: 'a', b: 'b', c: {b: 'b', d: {b: 'b', f: 'f'}}};
+const obj = {a: 'a', b: 'b', c: {b: 'b', d: {b: 'b', f: 'f'}}};
 console.log(omitDeep(obj, ['b']));
 //=> {a: 'a', c: {d: {f: 'f'}}}
 
-var obj = {a: 'a', b: 'b', c: {b: 'b', d: {b: 'b', f: 'f'}}};
+const obj = {a: 'a', b: 'b', c: {b: 'b', d: {b: 'b', f: 'f'}}};
 console.log(omitDeep(obj, ['b', 'f']));
 //=> {a: 'a', c: {d: {}}}
 ```
@@ -27,9 +29,23 @@ console.log(omitDeep(obj, ['b', 'f']));
 Also works with dot-notation:
 
 ```js
-var obj = {a: 'a', b: 'b', c: {b: 'b', d: {b: 'b', f: 'f'}}};
+const obj = {a: 'a', b: 'b', c: {b: 'b', d: {b: 'b', f: 'f'}}};
 console.log(omitDeep(obj, ['c.d.b', 'f']));
 //=> { a: 'a', b: 'b', c: { b: 'b', d: {} } }
+```
+
+Remove objects if they become empty after removing a key using option `cleanEmpty: true`
+```js
+const obj = { foo: { bar: 'baz' }, fizz: {} };
+omitDeep(obj, 'bar', {cleanEmpty: true});
+//=> { fizz: {} }
+```
+
+Remove all empty objects using option `removeEmpty: true`
+```js
+const obj = { foo: { bar: 'baz' }, fizz: {} };
+omitDeep(obj, 'bar', {removeEmpty: true});
+//=> {}
 ```
 
 ## About
@@ -64,7 +80,7 @@ Install dev dependencies:
 $ npm install -d && npm test
 ```
 
-### Author
+### Author of omit-deep
 
 **Jon Schlinkert**
 

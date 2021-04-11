@@ -1,15 +1,15 @@
 {
   "name": "omit-deep-remove",
   "description": "Recursively omit the specified key or keys from an object.",
-  "version": "1.0.0",
-  "homepage": "https://github.com/jonschlinkert/omit-deep",
+  "version": "1.0.1",
+  "homepage": "https://github.com/bsovs/omit-deep",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bsovs/omit-deep.git"
   },
   "bugs": {
-    "url": "https://github.com/jonschlinkert/omit-deep/issues"
+    "url": "https://github.com/bsovs/omit-deep/issues"
   },
   "license": "MIT",
   "files": [
